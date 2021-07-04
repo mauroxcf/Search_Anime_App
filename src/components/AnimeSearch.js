@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
+import AnimeRender from './AnimeRender';
 import axios from 'axios';
+
+import "./styles/App.css"
 
 export default function AnimeSearch() {
 
@@ -35,7 +38,6 @@ export default function AnimeSearch() {
     }
   }
 
-
   /* if (error) return "<PageError />" */
   if (loading) return "<Loader />"
 
@@ -50,8 +52,8 @@ export default function AnimeSearch() {
   }
   return (
     <main>
-      <div>
-        <form className="" onSubmit={HandleSearch}>
+      <div className="container">
+        <form onSubmit={HandleSearch}>
           <input
           type="search"
           placeholder="type here a anime name..."
@@ -59,7 +61,13 @@ export default function AnimeSearch() {
           value={search}
           onChange={(e) => setSearch(e.target.value)} />
         </form>
-        <button onClick={HandleSearch} className="btn btn-primary mx-2 mb-2"></button>
+        <button onClick={HandleSearch} className="btn btn-primary mx-2 mb-2">Search</button>
+      </div>
+      <div>
+        <button className="btn btn-primary mx-2 mb-2">Slides</button>
+      </div>
+      <div className="container cards">
+        <AnimeRender animeImg={anime}/>
       </div>
     </main>
   )
