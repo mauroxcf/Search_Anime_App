@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div>
-      <div className="text-center">
+      <div className="App">
         Anime Search Database
       </div>
       <div>
