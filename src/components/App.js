@@ -1,7 +1,8 @@
 import React from 'react'
 import AnimeSearch from './AnimeSearch';
 
-import './styles/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import './styles/App.css';
 
 
 function App() {

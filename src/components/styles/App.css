@@ -6,26 +6,19 @@ body {
   /* background-color: black; */
 }
 
-.cards {
-  margin: 0 auto;
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  padding: 0 2px;
-}
-
 .loader {
   color: blue;
 }
 
-img:hover {
-  transform: scale(1.05);
+.title {
+  font-size: medium;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 95%;
+  white-space: nowrap;
 }
 
-img {
-  transition: transform .3s;
+.score {
+  margin-top: 15px;
+  margin-top: 5px;
 }

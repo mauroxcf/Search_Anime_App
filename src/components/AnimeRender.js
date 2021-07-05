@@ -11,9 +11,11 @@ export default function AnimeRender(props) {
   return props.animeImg.map(val => {
     return (
       <div key={val.id} className="card m-1">
-        <p>{val.title}</p>
-        <img className="rounded" onClick={() => window.open(val.url, "anime url")} alt="Anime IMG" src={val.image_url} />
-        <p>{val.score}</p>
+        <h2 className="title">{val.title}</h2>
+        <div className="image_size">
+          <img className="rounded" onClick={() => window.open(val.url, "anime url")} alt="Anime IMG" src={val.image_url} />
+        </div>
+        <p className="score">{val.score}</p>
         <p>{handleMessage(val.score)}</p>
       </div>
     )

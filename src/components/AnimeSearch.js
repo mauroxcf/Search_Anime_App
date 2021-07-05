@@ -3,6 +3,7 @@ import AnimeRender from './AnimeRender';
 import axios from 'axios';
 
 import "./styles/App.css"
+import "./styles/images_styles.css"
 
 export default function AnimeSearch() {
 
@@ -22,6 +23,8 @@ export default function AnimeSearch() {
       const result = await axios("https://api.jikan.moe/v3/search/anime", {
         params: {
           q: search,
+          genre: 12,
+          genre_exclude: 0,
         }
       },);
 
