@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import AnimeRender from './AnimeRender';
+import CarouselRender from './CarouselRender';
 import axios from 'axios';
 
 import "./styles/App.css"
@@ -41,13 +42,12 @@ export default function AnimeSearch() {
     }
   }
 
-  /* if (error) return "<PageError />" */
+  /* if (error) return "<PagError />" */
   if (loading) return "<Loader />"
 
   const HandleSearch = (e) => {
     e.preventDefault()
     fetchData().then( (res) => {
-      /* if (res === undefined) return alert("error") */
       console.log('la respuesta es:')
       console.log(res)
       setAnime(res)
@@ -55,22 +55,20 @@ export default function AnimeSearch() {
   }
   return (
     <main>
-      <div className="container">
-        <form onSubmit={HandleSearch}>
+      <div className="container mb-2">
+        <form className="form-inline" type="text" onSubmit={HandleSearch}>
           <input
+          className="form-control"
           type="search"
           placeholder="type here a anime name..."
           required
           value={search}
           onChange={(e) => setSearch(e.target.value)} />
+          <button className="btn btn-primary mx-2 mx-md-4">Search</button>
         </form>
-        <button onClick={HandleSearch} className="btn btn-primary mx-2 mb-2">Search</button>
       </div>
-      <div>
-        <button className="btn btn-primary mx-2 mb-2">Slides</button>
-      </div>
-      <div className="container cards">
-        <AnimeRender animeImg={anime}/>
+      <div className="container">
+        <CarouselRender data={anime}/>
       </div>
     </main>
   )

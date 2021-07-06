@@ -1,13 +1,13 @@
 import React from 'react'
 
-export default function AnimeRender(props) {
+/* export default function AnimeRender(props) {
 
   const handleMessage = (score) => {
     if (score >= 0 && score <= 4) return "I do not recommend it."
     else if (score > 4 && score < 8) return "You may have fun."
     else return "Great, this is one of the best anime."
-
   }
+
   return props.animeImg.map(val => {
     return (
       <div key={val.id} className="card m-1">
@@ -21,3 +21,4 @@ export default function AnimeRender(props) {
     )
   })
 }
+ */

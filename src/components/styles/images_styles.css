@@ -8,7 +8,9 @@
 
 .card {
   padding: 0 2px;
+  min-width: 500px;
   width: 225px;
+  display: flex;
 }
 
 .image_size {
