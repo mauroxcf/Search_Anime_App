@@ -53,7 +53,11 @@ export default class CarouselRender extends Component {
             {this.props.data.map(val => (
               <div key={val.mal_id} className="card m-1 bg-light">
                 <h2 className="title my-2">{val.title}</h2>
-                <img className="image_size rounded" onClick={() => window.open(val.url, "anime url")} alt="Anime IMG" src={val.image_url} />
+                <img
+                className="image_size rounded"
+                onClick={() => window.open(val.url, "anime url")}
+                alt="Anime IMG"
+                src={val.image_url} />
                 <p className="score">Rating: {val.score}</p>
                 <p>User reviews: {handleMessage(val.score)}</p>
               </div>
