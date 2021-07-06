@@ -13,12 +13,13 @@ export default class CarouselRender extends Component {
       else return "Great, this is one of the best anime."
     }
 
+    //this settings is for the carousel, show slides, make the carousel responsive
     const settings = {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToShow: 5,
+      slidesToScroll: 3,
       initialSlide: 0,
       responsive: [
         {
@@ -50,11 +51,11 @@ export default class CarouselRender extends Component {
     return (<div>
           <Slider {...settings}>
             {this.props.data.map(val => (
-              <div key={val.mal_id} className="card m-1">
+              <div key={val.mal_id} className="card m-1 bg-light">
                 <h2 className="title my-2">{val.title}</h2>
                 <img className="image_size rounded" onClick={() => window.open(val.url, "anime url")} alt="Anime IMG" src={val.image_url} />
                 <p className="score">Rating: {val.score}</p>
-                <p>{handleMessage(val.score)}</p>
+                <p>User reviews: {handleMessage(val.score)}</p>
               </div>
             ))
             }

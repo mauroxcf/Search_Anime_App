@@ -1,0 +1,12 @@
+header h1 {
+	padding-top: 20px;
+	padding-bottom: 52px;
+  color: #AAA;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+}
+
+strong {
+  color: #313131;
+}

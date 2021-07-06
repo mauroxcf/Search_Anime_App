@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-import AnimeRender from './AnimeRender';
 import CarouselRender from './CarouselRender';
+import PagError from './PagError';
+import Loader from './Loader';
 import axios from 'axios';
 
 import "./styles/App.css"
@@ -36,18 +37,16 @@ export default function AnimeSearch() {
     } catch (error) {
       setLoading(false)
       setError(true)
-      if (search.length === 0) alert("escriba algo en el buscador")
-      else alert(error.message)
-      // manejar el else con el componente de error pasandole props el error
     }
   }
 
-  /* if (error) return "<PagError />" */
-  if (loading) return "<Loader />"
+  if (error) return <PagError />
+  if (loading) return <Loader />
 
   const HandleSearch = (e) => {
     e.preventDefault()
     fetchData().then( (res) => {
+      //this console.log its for testing data
       console.log('la respuesta es:')
       console.log(res)
       setAnime(res)
